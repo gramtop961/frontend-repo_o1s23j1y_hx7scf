@@ -1,26 +1,39 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Services from './components/Services'
+import Testimonials from './components/Testimonials'
+import CTA from './components/CTA'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-white text-slate-800">
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <Testimonials />
+        <CTA />
+        <footer id="contact" className="border-t border-slate-200 py-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-6">
+            <div>
+              <p className="font-semibold text-lg">BrightSmile Dental</p>
+              <p className="text-slate-600 mt-2 text-sm">123 Main Street, Suite 200, Your City</p>
+              <p className="text-slate-600 text-sm">Open Mon–Sat • Free parking</p>
+            </div>
+            <div>
+              <p className="font-semibold">Contact</p>
+              <p className="text-slate-600 mt-2 text-sm">Phone: (123) 456-7890</p>
+              <p className="text-slate-600 text-sm">Email: hello@brightsmile.com</p>
+            </div>
+            <div>
+              <p className="font-semibold">Hours</p>
+              <p className="text-slate-600 mt-2 text-sm">Mon–Fri: 8:00am – 6:00pm</p>
+              <p className="text-slate-600 text-sm">Sat: 9:00am – 2:00pm</p>
+            </div>
+          </div>
+          <p className="text-center text-slate-500 text-sm mt-6">© {new Date().getFullYear()} BrightSmile Dental. All rights reserved.</p>
+        </footer>
+      </main>
     </div>
   )
 }
